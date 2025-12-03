@@ -1,0 +1,28 @@
+.team-slot {
+  width: 150px;
+  height: 170px;
+  cursor: pointer;
+}
+
+.team-slot__placeholder {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #4a5568;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+}
+
+.team-slot__role-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #a0aec0;
+  margin-bottom: 1rem;
+}
+
+.team-slot__role-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}

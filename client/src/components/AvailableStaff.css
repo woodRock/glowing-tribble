@@ -1,0 +1,26 @@
+.available-staff {
+  flex-shrink: 0;
+  padding: 2rem;
+  background-color: #2d3748;
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+}
+
+.available-staff__role-group {
+  /* No styles needed here */
+}
+
+.available-staff__role-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.available-staff__grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
+  gap: 1rem;
+}

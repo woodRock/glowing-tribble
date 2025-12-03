@@ -1,0 +1,64 @@
+.hero-select {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.hero-select__team-selection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-select__team-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.hero-select__team-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.hero-select__available-staff {
+  flex-shrink: 0;
+  padding: 2rem;
+  background-color: #2d3748;
+}
+
+.hero-select__available-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-select__available-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+/* Placeholders */
+.team-slot-placeholder {
+  width: 150px;
+  height: 170px;
+  border: 2px dashed #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staff-card-placeholder {
+  width: 100px;
+  height: 120px;
+  border: 2px solid #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

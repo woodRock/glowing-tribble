@@ -1,0 +1,28 @@
+.app {
+  min-height: 100vh;
+  background-color: #1a202c; /* bg-gray-900 */
+  color: white;
+}
+
+.app__nav {
+  background-color: #2d3748; /* bg-gray-800 */
+  padding: 1rem; /* p-4 */
+  display: flex;
+  gap: 1rem; /* space-x-4 */
+}
+
+.app__nav-button {
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.app__nav-button--active {
+  color: #63b3ed; /* text-blue-400 */
+}
+
+.app__main {
+  /* No specific styles needed */
+}
