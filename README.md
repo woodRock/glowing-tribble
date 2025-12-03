@@ -42,3 +42,4 @@ This project is a monorepo containing a `server` (backend) and a `client` (front
     ```
     The frontend application will be running on `http://localhost:5173` (or the next available port).
 # glowing-tribble
+# glowing-tribble
