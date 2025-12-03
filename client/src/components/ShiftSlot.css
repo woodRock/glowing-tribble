@@ -1,0 +1,40 @@
+.shift-slot {
+  background-color: #4a5568;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.shift-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.shift-role-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+}
+
+.shift-role {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.shift-time {
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+.shift-assignment {
+  /* ... */
+}
+
+.assigned-staff {
+  font-weight: bold;
+}
+
+.unassigned-slot {
+  color: #a0aec0;
+  font-style: italic;
+}

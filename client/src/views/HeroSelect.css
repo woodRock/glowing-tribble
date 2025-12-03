@@ -2,15 +2,20 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 2rem;
 }
 
-.hero-select__team-selection {
+.hero-select__main-content {
   flex-grow: 1;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+}
+
+.hero-select__title-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .hero-select__team-title {
@@ -18,68 +23,32 @@
   font-weight: bold;
 }
 
-.hero-select__title-container {
+.hero-select__nav-buttons {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
 }
 
+.hero-select__nav-buttons button,
 .hero-select__generate-button {
   background-color: #3b82f6;
   color: white;
   font-weight: bold;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
 }
 
+.hero-select__nav-buttons button:hover,
 .hero-select__generate-button:hover {
   background-color: #2563eb;
 }
 
-.hero-select__team-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
-}
-
-.hero-select__available-staff {
-  flex-shrink: 0;
+.hero-select__message {
   padding: 2rem;
-  background-color: #2d3748;
+  text-align: center;
 }
 
-.hero-select__available-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.hero-select__available-grid {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-}
-
-/* Placeholders */
-.team-slot-placeholder {
-  width: 150px;
-  height: 170px;
-  border: 2px dashed #4a5568;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.staff-card-placeholder {
-  width: 100px;
-  height: 120px;
-  border: 2px solid #4a5568;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.hero-select__message--error {
+  color: #ef4444;
 }
