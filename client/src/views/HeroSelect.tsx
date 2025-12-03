@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import type { StaffMember, Role } from '../types.ts';
+import type { StaffMember, Role, Shift } from '../types.ts';
 import TeamSlot from '../components/TeamSlot';
 import AvailableStaff from '../components/AvailableStaff';
 import './HeroSelect.css';
@@ -19,6 +19,7 @@ const HeroSelect: React.FC = () => {
     "maitre'd": [null],
     "duty manager": [null],
   });
+  const [generatedRoster, setGeneratedRoster] = useState<Shift[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,17 +37,11 @@ const HeroSelect: React.FC = () => {
   }, []);
 
   const handleSelectStaff = (staffMember: StaffMember) => {
-    // Check if staff member is already selected
-    if (selectedStaffIds.includes(staffMember.id)) {
-      return;
-    }
-
-    const role = staffMember.roles[0]; // Simple logic for now
+    if (selectedStaffIds.includes(staffMember.id)) return;
+    const role = staffMember.roles[0];
     if (!role) return;
-
     const teamForRole = selectedTeam[role as keyof SelectedTeam];
     const emptySlotIndex = teamForRole.indexOf(null);
-
     if (emptySlotIndex !== -1) {
       const newTeamForRole = [...teamForRole];
       newTeamForRole[emptySlotIndex] = staffMember;
@@ -60,20 +55,52 @@ const HeroSelect: React.FC = () => {
     setSelectedTeam({ ...selectedTeam, [role]: newTeamForRole });
   };
 
+  const handleGenerateRoster = () => {
+    fetch('http://localhost:4000/api/roster/generate', { method: 'POST' })
+      .then(res => res.json())
+      .then((generatedRoster: Shift[]) => {
+        const newTeam: SelectedTeam = {
+          bar: [null, null],
+          restaurant: [null, null],
+          "maitre'd": [null],
+          "duty manager": [null],
+        };
+
+        generatedRoster.forEach(shift => {
+          if (shift.staffMemberId) {
+            const staffMember = allStaff.find(s => s.id === shift.staffMemberId);
+            if (staffMember) {
+              const teamForRole = newTeam[shift.role as keyof SelectedTeam];
+              if(teamForRole) {
+                const emptySlotIndex = teamForRole.indexOf(null);
+                if (emptySlotIndex !== -1) {
+                  teamForRole[emptySlotIndex] = staffMember;
+                }
+              }
+            }
+          }
+        });
+
+        setSelectedTeam(newTeam);
+        setGeneratedRoster(generatedRoster);
+      })
+      .catch(err => console.error('Error generating roster:', err));
+  };
+
   const selectedStaffIds = Object.values(selectedTeam).flat().filter(Boolean).map(s => s!.id);
 
-  if (loading) {
-    return <div className="hero-select__message">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="hero-select__message hero-select__message--error">Error: {error}</div>;
-  }
+  if (loading) return <div className="hero-select__message">Loading...</div>;
+  if (error) return <div className="hero-select__message hero-select__message--error">Error: {error}</div>;
 
   return (
     <div className="hero-select">
       <div className="hero-select__team-selection">
-        <h2 className="hero-select__team-title">Your Team</h2>
+        <div className="hero-select__title-container">
+          <h2 className="hero-select__team-title">Your Team</h2>
+          <button className="hero-select__generate-button" onClick={handleGenerateRoster}>
+            Generate Roster
+          </button>
+        </div>
         <div className="hero-select__team-grid">
           {selectedTeam.bar.map((staff, i) => <TeamSlot key={`bar-${i}`} staffMember={staff} role="bar" onClick={() => handleDeselectStaff('bar', i)} />)}
           {selectedTeam.restaurant.map((staff, i) => <TeamSlot key={`restaurant-${i}`} staffMember={staff} role="restaurant" onClick={() => handleDeselectStaff('restaurant', i)} />)}

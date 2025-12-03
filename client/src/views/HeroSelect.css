@@ -16,7 +16,28 @@
 .hero-select__team-title {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.hero-select__title-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.hero-select__generate-button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.hero-select__generate-button:hover {
+  background-color: #2563eb;
 }
 
 .hero-select__team-grid {

@@ -5,3 +5,11 @@ export interface StaffMember {
   name: string;
   roles: Role[];
 }
+
+export interface Shift {
+  id: string;
+  role: Role;
+  startTime: string; // Use string for dates from JSON
+  endTime: string;   // Use string for dates from JSON
+  staffMemberId?: string;
+}
