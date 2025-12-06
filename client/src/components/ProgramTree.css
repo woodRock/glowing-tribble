@@ -1,0 +1,47 @@
+.program-tree {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 16px;
+  color: #1a202c;
+}
+
+.program-tree h4 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.tree-node {
+  padding: 8px;
+  border-radius: 4px;
+  margin: 4px;
+  display: inline-block;
+  text-align: center;
+}
+
+.tree-node.function {
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+}
+
+.tree-node.terminal {
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+.node-name {
+  font-weight: bold;
+}
+
+.node-children {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #ccc;
+}
+
+.child-container {
+  padding: 0 8px;
+}

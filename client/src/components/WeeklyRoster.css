@@ -1,0 +1,41 @@
+.weekly-roster {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.weekly-roster__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.weekly-roster__table th,
+.weekly-roster__table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.weekly-roster__table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.weekly-roster__shift {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 4px;
+}
+
+.weekly-roster__shift-role {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.weekly-roster__shift-staff {
+  font-size: 0.85em;
+  color: #555;
+}

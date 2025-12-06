@@ -6,10 +6,9 @@ import './DailyRoster.css';
 interface DailyRosterProps {
   shifts: Shift[];
   staff: StaffMember[];
-  onAssign: (shift: Shift, staffMember: StaffMember) => void;
 }
 
-const DailyRoster: React.FC<DailyRosterProps> = ({ shifts, staff, onAssign }) => {
+const DailyRoster: React.FC<DailyRosterProps> = ({ shifts, staff }) => {
   const getStaffMember = (staffId: string | undefined) => {
     if (!staffId) return null;
     return staff.find(s => s.id === staffId) || null;

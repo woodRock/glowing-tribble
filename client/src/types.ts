@@ -13,3 +13,24 @@ export interface Shift {
   endTime: string;   // Use string for dates from JSON
   staffMemberId?: string;
 }
+
+export interface RosterMetrics {
+  totalPenalty: number;
+  penalties: {
+    desiredHours: number;
+    consecutiveDays: number;
+    clopen: number;
+  };
+}
+
+export interface RosterGenerationResult {
+  roster: Shift[];
+  history: number[];
+  programHistory: any[];
+}
+
+export interface ProgramNode {
+  type: 'function' | 'terminal';
+  name: string;
+  children: ProgramNode[];
+}

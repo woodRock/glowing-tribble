@@ -1,0 +1,17 @@
+.fitness-chart {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 16px;
+  color: #1a202c;
+}
+
+.fitness-chart h4 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.fitness-chart svg {
+  width: 100%;
+}

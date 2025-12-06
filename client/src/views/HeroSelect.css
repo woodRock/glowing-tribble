@@ -44,6 +44,18 @@
   background-color: #2563eb;
 }
 
+.hero-select__generation-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-select__generation-controls select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
 .hero-select__message {
   padding: 2rem;
   text-align: center;

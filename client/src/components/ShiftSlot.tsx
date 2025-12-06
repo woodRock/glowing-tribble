@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { Shift, StaffMember } from '../types.ts';
+import { useDroppable } from '@dnd-kit/core';
+import StaffCard from './StaffCard';
 import './ShiftSlot.css';
 
 interface ShiftSlotProps {
@@ -8,6 +10,9 @@ interface ShiftSlotProps {
 }
 
 const ShiftSlot: React.FC<ShiftSlotProps> = ({ shift, staffMember }) => {
+  const { isOver, setNodeRef } = useDroppable({
+    id: shift.id,
+  });
   const [icon, setIcon] = useState('');
 
   useEffect(() => {
@@ -22,8 +27,10 @@ const ShiftSlot: React.FC<ShiftSlotProps> = ({ shift, staffMember }) => {
     importIcon();
   }, [shift.role]);
 
+  const slotClass = isOver ? "shift-slot shift-slot--over" : "shift-slot";
+
   return (
-    <div className="shift-slot">
+    <div ref={setNodeRef} className={slotClass}>
       <div className="shift-info">
         {icon && <img src={icon} alt={`${shift.role} icon`} className="shift-role-icon" />}
         <div className="shift-details">
@@ -36,7 +43,13 @@ const ShiftSlot: React.FC<ShiftSlotProps> = ({ shift, staffMember }) => {
       </div>
       <div className="shift-assignment">
         {staffMember ? (
-          <div className="assigned-staff">{staffMember.name}</div>
+          <StaffCard
+            id={staffMember.id}
+            name={staffMember.name}
+            avatarUrl={`https://api.dicebear.com/8.x/adventurer/svg?seed=${staffMember.id}`}
+            isSelected={false}
+            isDraggable={false}
+          />
         ) : (
           <div className="unassigned-slot">Unassigned</div>
         )}
@@ -46,3 +59,5 @@ const ShiftSlot: React.FC<ShiftSlotProps> = ({ shift, staffMember }) => {
 };
 
 export default ShiftSlot;
+
+
