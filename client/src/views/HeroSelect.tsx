@@ -13,7 +13,7 @@ import type { DragEndEvent } from '@dnd-kit/core';
 import './HeroSelect.css';
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco' | 'hybrid_ga_cp'; // Add hybrid_ga_cp
+type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco' | 'hybrid_ga_cp' | 'neural_network'; // Add neural_network
 type RosterView = 'weekly' | 'daily' | 'staff';
 
 const HeroSelect: React.FC = () => {
@@ -265,6 +265,7 @@ const HeroSelect: React.FC = () => {
                 <option value="cp">Constraint Programming</option>
                 <option value="aco">Ant Colony Optimization</option>
                 <option value="hybrid_ga_cp">Hybrid GA+CP</option>
+                <option value="neural_network">Neural Network</option>
               </select>
               {(selectedAlgorithm === 'ga' || selectedAlgorithm === 'hybrid_ga_cp') && (
                 <div className="generation-input">
