@@ -13,23 +13,35 @@
 
 .hero-select__title-container {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Adjusted margin */
+  gap: 1rem; /* Gap between items */
 }
 
 .hero-select__team-title {
   font-size: 2rem;
   font-weight: bold;
+  flex-shrink: 0; /* Prevent title from shrinking */
 }
 
-.hero-select__nav-buttons {
+.hero-select__view-controls,
+.hero-select__date-nav,
+.hero-select__staff-select,
+.hero-select__generation-controls {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem; /* Smaller gap for controls */
+  align-items: center;
+  flex-wrap: wrap; /* Allow controls to wrap */
 }
 
-.hero-select__nav-buttons button,
-.hero-select__generate-button {
+.hero-select__view-controls button,
+.hero-select__date-nav button,
+.hero-select__generation-controls select,
+.hero-select__generation-controls button,
+.hero-select__save-button,
+.hero-select__clear-button {
   background-color: #3b82f6;
   color: white;
   font-weight: bold;
@@ -37,23 +49,38 @@
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.hero-select__nav-buttons button:hover,
-.hero-select__generate-button:hover {
+.hero-select__view-controls button:hover,
+.hero-select__date-nav button:hover,
+.hero-select__generation-controls button:hover,
+.hero-select__save-button:hover,
+.hero-select__clear-button:hover {
   background-color: #2563eb;
 }
 
-.hero-select__generation-controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.hero-select__view-controls button.active {
+  background-color: #1d4ed8; /* Darker blue for active view button */
+}
+
+.hero-select__date-nav span {
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.hero-select__staff-select select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: white;
 }
 
 .hero-select__generation-controls select {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 .hero-select__message {

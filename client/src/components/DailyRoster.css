@@ -1,38 +1,79 @@
 .daily-roster {
+  padding: 20px;
+}
+
+.daily-roster h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.daily-roster__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.shift-slot {
-  background-color: #4a5568;
-  border-radius: 0.5rem;
-  padding: 1rem;
+.daily-roster__slot {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.shift-info {
-  margin-bottom: 1rem;
+.daily-roster__slot h3 {
+  margin-top: 0;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.shift-role {
+.daily-roster__shift {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.daily-roster__shift-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.daily-roster__shift-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.daily-roster__shift-role {
   font-weight: bold;
-  text-transform: capitalize;
+  font-size: 1em;
+  color: #333;
 }
 
-.shift-time {
-  font-size: 0.9rem;
-  color: #a0aec0;
+.daily-roster__shift-time {
+  font-size: 0.85em;
+  color: #777;
+  margin-bottom: 5px;
 }
 
-.shift-assignment {
-  /* ... */
+.daily-roster__shift-staff {
+  font-size: 0.9em;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.assigned-staff {
-  font-weight: bold;
-}
-
-.unassigned-slot {
-  color: #a0aec0;
-  font-style: italic;
+.daily-roster__staff-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
 }

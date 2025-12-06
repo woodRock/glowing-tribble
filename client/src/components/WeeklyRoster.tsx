@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Shift, StaffMember, Role } from '../types';
 import './WeeklyRoster.css';
+import { useDroppable } from '@dnd-kit/core'; // Import useDroppable
 
 // Import icons
 import BarIcon from '../assets/icons/bar.svg';
@@ -19,6 +20,7 @@ const roleIcons: Record<Role, string> = {
 interface WeeklyRosterProps {
   shifts: Shift[];
   staff: StaffMember[];
+  onShiftClick: (shift: Shift) => void; // New prop
 }
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -31,7 +33,7 @@ const getTimeSlot = (shift: Shift): string => {
   return 'Evening';
 };
 
-const WeeklyRoster: React.FC<WeeklyRosterProps> = ({ shifts, staff }) => {
+const WeeklyRoster: React.FC<WeeklyRosterProps> = ({ shifts, staff, onShiftClick }) => {
   const getStaffMember = (staffId: string | undefined) => {
     if (!staffId) return null;
     return staff.find(s => s.id === staffId) || null;
@@ -69,24 +71,36 @@ const WeeklyRoster: React.FC<WeeklyRosterProps> = ({ shifts, staff }) => {
               <td>{day}</td>
               {timeSlots.map(slot => (
                 <td key={slot}>
-                  {shiftsByDayAndSlot[day][slot].map(shift => (
-                    <div key={shift.id} className="weekly-roster__shift">
-                      <div className="weekly-roster__shift-header">
-                        <img src={roleIcons[shift.role]} alt={shift.role} className="weekly-roster__shift-icon" />
-                        <div className="weekly-roster__shift-role">{shift.role}</div>
+                  {shiftsByDayAndSlot[day][slot].map(shift => {
+                    const { setNodeRef } = useDroppable({ id: shift.id });
+                    return (
+                      <div 
+                        key={shift.id} 
+                        ref={setNodeRef} // Set the droppable ref
+                        className="weekly-roster__shift" 
+                        onClick={() => onShiftClick(shift)}
+                      >
+                        <div className="weekly-roster__shift-header">
+                          <img src={roleIcons[shift.role]} alt={shift.role} className="weekly-roster__shift-icon" />
+                          <div className="weekly-roster__shift-role">{shift.role}</div>
+                        </div>
+                        <div className="weekly-roster__shift-time">
+                          {new Date(shift.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} -
+                          {new Date(shift.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </div>
+                        <div className="weekly-roster__shift-staff">
+                          {shift.staffMemberId ? (
+                            <>
+                              <img src={getStaffMember(shift.staffMemberId)?.avatar} alt={getStaffMember(shift.staffMemberId)?.name} className="weekly-roster__staff-avatar" />
+                              <span>{getStaffMember(shift.staffMemberId)?.name}</span>
+                            </>
+                          ) : (
+                            'Unassigned'
+                          )}
+                        </div>
                       </div>
-                      <div className="weekly-roster__shift-staff">
-                        {shift.staffMemberId ? (
-                          <>
-                            <img src={getStaffMember(shift.staffMemberId)?.avatar} alt={getStaffMember(shift.staffMemberId)?.name} className="weekly-roster__staff-avatar" />
-                            <span>{getStaffMember(shift.staffMemberId)?.name}</span>
-                          </>
-                        ) : (
-                          'Unassigned'
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </td>
               ))}
             </tr>

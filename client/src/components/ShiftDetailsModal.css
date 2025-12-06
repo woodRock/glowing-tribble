@@ -1,0 +1,72 @@
+.shift-details-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.shift-details-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.shift-details-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #555;
+}
+
+.shift-details-modal-close:hover {
+  color: #333;
+}
+
+.shift-details-modal-content h2 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.shift-details-modal-body p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #555;
+}
+
+.shift-details-modal-body strong {
+  margin-right: 10px;
+  color: #333;
+}
+
+.shift-details-modal-icon,
+.shift-details-modal-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%; /* For avatars */
+  object-fit: cover;
+  margin-right: 8px;
+  border: 1px solid #eee;
+}
+
+.shift-details-modal-icon {
+  border-radius: 0; /* Icons typically not rounded */
+}

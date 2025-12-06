@@ -3,20 +3,27 @@ import type { StaffMember, Shift, RosterMetrics, ProgramNode } from '../types.ts
 import DailyRoster from '../components/DailyRoster';
 import AvailableStaff from '../components/AvailableStaff';
 import WeeklyRoster from '../components/WeeklyRoster';
+import StaffRoster from '../components/StaffRoster';
 import RosterMetricsDisplay from '../components/RosterMetrics';
 import FitnessChart from '../components/FitnessChart';
 import ProgramTree from '../components/ProgramTree';
+import ShiftDetailsModal from '../components/ShiftDetailsModal'; // Import ShiftDetailsModal
 import { DndContext } from '@dnd-kit/core';
 import type { DragEndEvent } from '@dnd-kit/core';
 import './HeroSelect.css';
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco';
+type RosterView = 'weekly' | 'daily' | 'staff';
 
 const HeroSelect: React.FC = () => {
   const [allStaff, setAllStaff] = useState<StaffMember[]>([]);
   const [allShifts, setAllShifts] = useState<Shift[]>([]);
-  const [selectedDay, setSelectedDay] = useState(0);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-12-15T00:00:00'));
+  const [rosterView, setRosterView] = useState<RosterView>('weekly');
+  const [selectedStaffMemberId, setSelectedStaffMemberId] = useState<string | null>(null);
+  const [selectedShiftForDetails, setSelectedShiftForDetails] = useState<Shift | null>(null); // New state for modal
+  const [isShiftModalOpen, setIsShiftModalOpen] = useState(false); // New state for modal
   const [loading, setLoading] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -152,14 +159,32 @@ const HeroSelect: React.FC = () => {
     }
   };
 
-  const getShiftsForDay = (dayIndex: number) => {
-    if (dayIndex > 6) return allShifts;
-    const day = new Date(new Date('2025-12-15T00:00:00').getTime() + dayIndex * 24 * 60 * 60 * 1000);
-    return allShifts.filter(shift => new Date(shift.startTime).getDate() === day.getDate());
+  const getShiftsForSelectedDate = (date: Date) => {
+    const startOfDay = new Date(date);
+    startOfDay.setHours(0, 0, 0, 0);
+    const endOfDay = new Date(date);
+    endOfDay.setHours(23, 59, 59, 999);
+
+    return allShifts.filter(shift => {
+      const shiftStartTime = new Date(shift.startTime);
+      return shiftStartTime >= startOfDay && shiftStartTime <= endOfDay;
+    });
   };
 
-  const shiftsForDay = getShiftsForDay(selectedDay);
-  const selectedStaffIdsForDay = shiftsForDay.map(s => s.staffMemberId).filter(Boolean) as string[];
+  const shiftsForSelectedDate = getShiftsForSelectedDate(selectedDate);
+  const selectedStaffIdsForDay = shiftsForSelectedDate.map(s => s.staffMemberId).filter(Boolean) as string[];
+
+  const selectedStaffMember = selectedStaffMemberId ? allStaff.find(s => s.id === selectedStaffMemberId) : null;
+
+  const handleShiftClick = (shift: Shift) => {
+    setSelectedShiftForDetails(shift);
+    setIsShiftModalOpen(true);
+  };
+
+  const handleCloseShiftModal = () => {
+    setIsShiftModalOpen(false);
+    setSelectedShiftForDetails(null);
+  };
 
   if (loading) return <div className="hero-select__message">Loading...</div>;
   if (error) return <div className="hero-select__message hero-select__message--error">Error: {error}</div>;
@@ -170,13 +195,55 @@ const HeroSelect: React.FC = () => {
         <div className="hero-select__main-content">
           <div className="hero-select__title-container">
             <h2 className="hero-select__team-title">
-              {selectedDay > 6 ? 'Full Week Roster' : `${weekDays[selectedDay]}'s Roster`}
+              {rosterView === 'weekly' && 'Full Week Roster'}
+              {rosterView === 'daily' && `Roster for ${selectedDate.toDateString()}`}
+              {rosterView === 'staff' && selectedStaffMember && `Roster for ${selectedStaffMember.name}`}
+              {rosterView === 'staff' && !selectedStaffMember && 'Select a Staff Member'}
             </h2>
-            <div className="hero-select__nav-buttons">
-              <button onClick={() => setSelectedDay(prev => Math.max(0, prev - 1))} disabled={isGenerating}>Prev Day</button>
-              <button onClick={() => setSelectedDay(prev => Math.min(6, prev + 1))} disabled={isGenerating}>Next Day</button>
-              <button onClick={() => setSelectedDay(7)} disabled={isGenerating}>This Week</button>
+            <div className="hero-select__view-controls">
+              <button 
+                onClick={() => setRosterView('weekly')} 
+                className={rosterView === 'weekly' ? 'active' : ''}
+                disabled={isGenerating}
+              >
+                Weekly
+              </button>
+              <button 
+                onClick={() => setRosterView('daily')} 
+                className={rosterView === 'daily' ? 'active' : ''}
+                disabled={isGenerating}
+              >
+                Daily
+              </button>
+              <button 
+                onClick={() => setRosterView('staff')} 
+                className={rosterView === 'staff' ? 'active' : ''}
+                disabled={isGenerating}
+              >
+                Staff
+              </button>
             </div>
+            {rosterView === 'daily' && (
+              <div className="hero-select__date-nav">
+                <button onClick={() => setSelectedDate(prev => new Date(prev.getTime() - 24 * 60 * 60 * 1000))} disabled={isGenerating}>Prev Day</button>
+                <span>{selectedDate.toDateString()}</span>
+                <button onClick={() => setSelectedDate(prev => new Date(prev.getTime() + 24 * 60 * 60 * 1000))} disabled={isGenerating}>Next Day</button>
+              </div>
+            )}
+            {rosterView === 'staff' && (
+              <div className="hero-select__staff-select">
+                <select 
+                  value={selectedStaffMemberId || ''} 
+                  onChange={e => setSelectedStaffMemberId(e.target.value)}
+                  disabled={isGenerating}
+                >
+                  <option value="">Select Staff Member</option>
+                  {allStaff.map(s => (
+                    <option key={s.id} value={s.id}>{s.name}</option>
+                  ))}
+                </select>
+              </div>
+            )}
             <div className="hero-select__generation-controls">
               <select 
                 value={selectedAlgorithm} 
@@ -202,15 +269,14 @@ const HeroSelect: React.FC = () => {
           </div>
           {isGenerating && <div className="hero-select__message">Generating...</div>}
           <div style={{ display: isGenerating ? 'none' : 'block' }}>
-            {selectedDay > 6 ? (
-              <WeeklyRoster shifts={allShifts} staff={allStaff} />
-            ) : (
-              <DailyRoster shifts={shiftsForDay} staff={allStaff} />
-            )}
+            {rosterView === 'weekly' && <WeeklyRoster shifts={allShifts} staff={allStaff} onShiftClick={handleShiftClick} />}
+            {rosterView === 'daily' && <DailyRoster shifts={shiftsForSelectedDate} staff={allStaff} selectedDate={selectedDate} onShiftClick={handleShiftClick} />}
+            {rosterView === 'staff' && selectedStaffMember && <StaffRoster staffMember={selectedStaffMember} shifts={allShifts} />}
+            {rosterView === 'staff' && !selectedStaffMember && <p>Please select a staff member to view their roster.</p>}
           </div>
         </div>
         <div className="hero-select__sidebar">
-          {selectedDay <= 6 && !isGenerating && (
+          {rosterView === 'daily' && !isGenerating && (
             <AvailableStaff
               allStaff={allStaff}
               selectedStaffIds={selectedStaffIdsForDay}
@@ -235,6 +301,11 @@ const HeroSelect: React.FC = () => {
           )}
         </div>
       </div>
+      <ShiftDetailsModal 
+        shift={selectedShiftForDetails} 
+        staff={allStaff} 
+        onClose={handleCloseShiftModal} 
+      />
     </DndContext>
   );
 };

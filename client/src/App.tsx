@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import HeroSelect from './views/HeroSelect';
 import TemplateView from './views/TemplateView';
+import StaffManagement from './components/StaffManagement'; // Import StaffManagement
 import './App.css';
 
-type View = 'roster' | 'templates';
+type View = 'roster' | 'templates' | 'staff'; // Add 'staff' view
 
 function App() {
   const [view, setView] = useState<View>('roster');
@@ -23,10 +24,17 @@ function App() {
         >
           Templates
         </button>
+        <button
+          onClick={() => setView('staff')} // New button for Staff Management
+          className={`app__nav-button ${view === 'staff' ? 'app__nav-button--active' : ''}`}
+        >
+          Staff
+        </button>
       </nav>
       <main className="app__main">
         {view === 'roster' && <HeroSelect />}
         {view === 'templates' && <TemplateView />}
+        {view === 'staff' && <StaffManagement />} {/* Render StaffManagement */}
       </main>
     </div>
   );
