@@ -1,6 +1,20 @@
 import React from 'react';
-import type { Shift, StaffMember } from '../types';
+import type { Shift, StaffMember, Role } from '../types';
 import './WeeklyRoster.css';
+
+// Import icons
+import BarIcon from '../assets/icons/bar.svg';
+import DutyManagerIcon from '../assets/icons/dutymanager.svg';
+import MaitredIcon from '../assets/icons/maitred.svg';
+import RestaurantIcon from '../assets/icons/restaurant.svg';
+
+// Map roles to icons
+const roleIcons: Record<Role, string> = {
+  'bar': BarIcon,
+  'duty manager': DutyManagerIcon,
+  'maitre\'d': MaitredIcon,
+  'restaurant': RestaurantIcon,
+};
 
 interface WeeklyRosterProps {
   shifts: Shift[];
@@ -57,9 +71,19 @@ const WeeklyRoster: React.FC<WeeklyRosterProps> = ({ shifts, staff }) => {
                 <td key={slot}>
                   {shiftsByDayAndSlot[day][slot].map(shift => (
                     <div key={shift.id} className="weekly-roster__shift">
-                      <div className="weekly-roster__shift-role">{shift.role}</div>
+                      <div className="weekly-roster__shift-header">
+                        <img src={roleIcons[shift.role]} alt={shift.role} className="weekly-roster__shift-icon" />
+                        <div className="weekly-roster__shift-role">{shift.role}</div>
+                      </div>
                       <div className="weekly-roster__shift-staff">
-                        {getStaffMember(shift.staffMemberId)?.name || 'Unassigned'}
+                        {shift.staffMemberId ? (
+                          <>
+                            <img src={getStaffMember(shift.staffMemberId)?.avatar} alt={getStaffMember(shift.staffMemberId)?.name} className="weekly-roster__staff-avatar" />
+                            <span>{getStaffMember(shift.staffMemberId)?.name}</span>
+                          </>
+                        ) : (
+                          'Unassigned'
+                        )}
                       </div>
                     </div>
                   ))}

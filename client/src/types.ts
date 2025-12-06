@@ -4,6 +4,7 @@ export interface StaffMember {
   id: string;
   name: string;
   roles: Role[];
+  avatar: string;
 }
 
 export interface Shift {

@@ -35,7 +35,29 @@
   font-size: 0.9em;
 }
 
+.weekly-roster__shift-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.weekly-roster__shift-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .weekly-roster__shift-staff {
   font-size: 0.85em;
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weekly-roster__staff-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
 }

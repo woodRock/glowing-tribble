@@ -11,7 +11,7 @@ import type { DragEndEvent } from '@dnd-kit/core';
 import './HeroSelect.css';
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-type Algorithm = 'greedy' | 'ga' | 'gp';
+type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco';
 
 const HeroSelect: React.FC = () => {
   const [allStaff, setAllStaff] = useState<StaffMember[]>([]);
@@ -186,6 +186,8 @@ const HeroSelect: React.FC = () => {
                 <option value="greedy">Greedy Algorithm</option>
                 <option value="ga">Genetic Algorithm</option>
                 <option value="gp">Genetic Programming</option>
+                <option value="cp">Constraint Programming</option>
+                <option value="aco">Ant Colony Optimization</option>
               </select>
               <button className="hero-select__generate-button" onClick={handleGenerateRoster} disabled={isGenerating}>
                 Run Generation
