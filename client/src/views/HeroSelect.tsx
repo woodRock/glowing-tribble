@@ -13,7 +13,7 @@ import type { DragEndEvent } from '@dnd-kit/core';
 import './HeroSelect.css';
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco';
+type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco' | 'hybrid_ga_cp'; // Add hybrid_ga_cp
 type RosterView = 'weekly' | 'daily' | 'staff';
 
 const HeroSelect: React.FC = () => {
@@ -28,10 +28,12 @@ const HeroSelect: React.FC = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [metrics, setMetrics] = useState<RosterMetrics | null>(null);
+  const [rosterConflicts, setRosterConflicts] = useState<Types.Conflict[]>([]); // New state for conflicts
   const [gaHistory, setGaHistory] = useState<number[]>([]);
   const [gpProgramHistory, setGpProgramHistory] = useState<ProgramNode[]>([]);
   const [selectedGeneration, setSelectedGeneration] = useState(0);
   const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm>('greedy');
+  const [numGenerations, setNumGenerations] = useState<number>(50); // New state for numGenerations
 
   const fetchMetrics = useCallback((roster: Shift[]) => {
     fetch('http://localhost:4000/api/roster/evaluate', {
@@ -40,7 +42,10 @@ const HeroSelect: React.FC = () => {
       body: JSON.stringify(roster),
     })
     .then(res => res.json())
-    .then(setMetrics)
+    .then(data => {
+      setMetrics(data);
+      setRosterConflicts(data.conflicts || []); // Store conflicts
+    })
     .catch(err => console.error('Error fetching metrics:', err));
   }, []);
 
@@ -70,7 +75,11 @@ const HeroSelect: React.FC = () => {
     const emptyRoster = allShifts.map(shift => ({ ...shift, staffMemberId: undefined }));
     setAllShifts(emptyRoster);
 
-    fetch(`http://localhost:4000/api/roster/generate/${selectedAlgorithm}`, { method: 'POST' })
+    fetch(`http://localhost:4000/api/roster/generate/${selectedAlgorithm}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ numGenerations: numGenerations }), // Pass numGenerations
+    })
       .then(res => res.json())
       .then(result => {
         if (selectedAlgorithm === 'greedy') {
@@ -255,7 +264,21 @@ const HeroSelect: React.FC = () => {
                 <option value="gp">Genetic Programming</option>
                 <option value="cp">Constraint Programming</option>
                 <option value="aco">Ant Colony Optimization</option>
+                <option value="hybrid_ga_cp">Hybrid GA+CP</option>
               </select>
+              {(selectedAlgorithm === 'ga' || selectedAlgorithm === 'hybrid_ga_cp') && (
+                <div className="generation-input">
+                  <label htmlFor="numGenerations">Generations:</label>
+                  <input
+                    type="number"
+                    id="numGenerations"
+                    value={numGenerations}
+                    onChange={e => setNumGenerations(Number(e.target.value))}
+                    min="1"
+                    disabled={isGenerating}
+                  />
+                </div>
+              )}
               <button className="hero-select__generate-button" onClick={handleGenerateRoster} disabled={isGenerating}>
                 Run Generation
               </button>
@@ -269,8 +292,8 @@ const HeroSelect: React.FC = () => {
           </div>
           {isGenerating && <div className="hero-select__message">Generating...</div>}
           <div style={{ display: isGenerating ? 'none' : 'block' }}>
-            {rosterView === 'weekly' && <WeeklyRoster shifts={allShifts} staff={allStaff} onShiftClick={handleShiftClick} />}
-            {rosterView === 'daily' && <DailyRoster shifts={shiftsForSelectedDate} staff={allStaff} selectedDate={selectedDate} onShiftClick={handleShiftClick} />}
+            {rosterView === 'weekly' && <WeeklyRoster shifts={allShifts} staff={allStaff} selectedDate={selectedDate} onShiftClick={handleShiftClick} conflicts={rosterConflicts} />}
+            {rosterView === 'daily' && <DailyRoster shifts={shiftsForSelectedDate} staff={allStaff} selectedDate={selectedDate} onShiftClick={handleShiftClick} conflicts={rosterConflicts} />}
             {rosterView === 'staff' && selectedStaffMember && <StaffRoster staffMember={selectedStaffMember} shifts={allShifts} />}
             {rosterView === 'staff' && !selectedStaffMember && <p>Please select a staff member to view their roster.</p>}
           </div>

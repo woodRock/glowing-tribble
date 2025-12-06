@@ -40,6 +40,13 @@ const StaffManagement: React.FC = () => {
     fetchStaff();
   }, []);
 
+  const formatDateTimeLocal = (isoString: string) => {
+    if (!isoString) return '';
+    const date = new Date(isoString);
+    date.setMinutes(date.getMinutes() - date.getTimezoneOffset()); // Adjust for timezone
+    return date.toISOString().slice(0, 16);
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     if (name.startsWith('preferences.')) {
@@ -80,6 +87,46 @@ const StaffManagement: React.FC = () => {
     }));
   };
 
+  const handleAvailabilityChange = (index: number, field: 'startTime' | 'endTime', value: string) => {
+    setFormData(prev => {
+      const newAvailability = [...(prev.preferences?.availability || [])];
+      newAvailability[index] = {
+        ...newAvailability[index],
+        [field]: value ? new Date(value).toISOString() : '', // Convert to ISO string for storage
+      };
+      return {
+        ...prev,
+        preferences: {
+          ...prev.preferences!,
+          availability: newAvailability,
+        },
+      };
+    });
+  };
+
+  const addAvailabilitySlot = () => {
+    setFormData(prev => ({
+      ...prev,
+      preferences: {
+        ...prev.preferences!,
+        availability: [
+          ...(prev.preferences?.availability || []),
+          { startTime: '', endTime: '' },
+        ],
+      },
+    }));
+  };
+
+  const removeAvailabilitySlot = (index: number) => {
+    setFormData(prev => ({
+      ...prev,
+      preferences: {
+        ...prev.preferences!,
+        availability: (prev.preferences?.availability || []).filter((_, i) => i !== index),
+      },
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -92,6 +139,17 @@ const StaffManagement: React.FC = () => {
     if (!formData.preferences?.desiredHours || formData.preferences.desiredHours <= 0) {
       setError('Desired hours must be a positive number.');
       return;
+    }
+    // Validate availability slots
+    for (const slot of (formData.preferences?.availability || [])) {
+      if (!slot.startTime || !slot.endTime) {
+        setError('All availability slots must have both start and end times.');
+        return;
+      }
+      if (new Date(slot.startTime).getTime() >= new Date(slot.endTime).getTime()) {
+        setError('Availability slot end time must be after start time.');
+        return;
+      }
     }
 
     try {
@@ -135,7 +193,16 @@ const StaffManagement: React.FC = () => {
   };
 
   const handleEdit = (staffMember: Types.StaffMember) => {
-    setFormData(staffMember);
+    setFormData({
+      ...staffMember,
+      preferences: {
+        ...staffMember.preferences,
+        availability: staffMember.preferences.availability.map(slot => ({
+          startTime: formatDateTimeLocal(slot.startTime),
+          endTime: formatDateTimeLocal(slot.endTime),
+        })),
+      },
+    });
     setEditingStaffId(staffMember.id);
   };
 
@@ -227,7 +294,29 @@ const StaffManagement: React.FC = () => {
               Prefers Consecutive Days Off
             </label>
           </div>
-          {/* Availability is more complex, will add later if needed */}
+
+          <div className="availability-section">
+            <label>Availability:</label>
+            {(formData.preferences?.availability || []).map((slot, index) => (
+              <div key={index} className="availability-slot">
+                <input
+                  type="datetime-local"
+                  value={slot.startTime ? formatDateTimeLocal(slot.startTime) : ''}
+                  onChange={(e) => handleAvailabilityChange(index, 'startTime', e.target.value)}
+                  required
+                />
+                <input
+                  type="datetime-local"
+                  value={slot.endTime ? formatDateTimeLocal(slot.endTime) : ''}
+                  onChange={(e) => handleAvailabilityChange(index, 'endTime', e.target.value)}
+                  required
+                />
+                <button type="button" onClick={() => removeAvailabilitySlot(index)}>Remove</button>
+              </div>
+            ))}
+            <button type="button" onClick={addAvailabilitySlot}>Add Availability Slot</button>
+          </div>
+
           <button type="submit">{editingStaffId ? 'Update Staff' : 'Add Staff'}</button>
           {editingStaffId && (
             <button type="button" onClick={() => {
@@ -257,6 +346,18 @@ const StaffManagement: React.FC = () => {
               <p>Roles: {member.roles.join(', ')}</p>
               <p>Desired Hours: {member.preferences.desiredHours}</p>
               <p>Prefers Consecutive Days Off: {member.preferences.prefersConsecutiveDaysOff ? 'Yes' : 'No'}</p>
+              {member.preferences.availability.length > 0 && (
+                <div>
+                  <h4>Availability:</h4>
+                  <ul>
+                    {member.preferences.availability.map((slot, index) => (
+                      <li key={index}>
+                        {new Date(slot.startTime).toLocaleString()} - {new Date(slot.endTime).toLocaleString()}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
             <div className="staff-actions">
               <button className="edit" onClick={() => handleEdit(member)}>Edit</button>

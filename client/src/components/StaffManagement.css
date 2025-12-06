@@ -138,6 +138,71 @@
   width: auto;
 }
 
+.availability-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.availability-section label {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.availability-slot {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.availability-slot input[type="datetime-local"] {
+  flex: 1;
+  width: auto; /* Override default form input width */
+}
+
+.availability-slot button {
+  background-color: #dc3545;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  margin-left: 0; /* Reset margin from general button style */
+}
+
+.availability-slot button:hover {
+  background-color: #c82333;
+}
+
+.availability-section > button { /* Style for "Add Availability Slot" button */
+  background-color: #007bff;
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+.availability-section > button:hover {
+  background-color: #0056b3;
+}
+
+.staff-info h4 {
+  margin: 10px 0 5px 0;
+  font-size: 1em;
+  color: #666;
+}
+
+.staff-info ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.staff-info ul li {
+  font-size: 0.85em;
+  color: #888;
+  margin-bottom: 3px;
+}
+
 .error-message {
   color: #dc3545;
   background-color: #f8d7da;

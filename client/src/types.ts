@@ -25,6 +25,13 @@ export interface Shift {
   staffMemberId?: string;
 }
 
+export interface Conflict {
+  type: 'double_booking' | 'unassigned_shift' | 'role_mismatch' | 'availability_violation' | 'insufficient_rest' | 'exceeds_max_hours' | 'exceeds_consecutive_days';
+  shiftId?: string;
+  staffMemberId?: string;
+  message: string;
+}
+
 export interface RosterMetrics {
   totalPenalty: number;
   penalties: {
@@ -32,6 +39,7 @@ export interface RosterMetrics {
     consecutiveDays: number;
     clopen: number;
   };
+  conflicts: Conflict[];
 }
 
 export interface RosterGenerationResult {

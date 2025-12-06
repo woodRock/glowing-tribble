@@ -1,63 +1,66 @@
 .weekly-roster {
-  width: 100%;
-  overflow-x: auto;
+  padding: 20px;
 }
 
-.weekly-roster__table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+.weekly-roster h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.weekly-roster__table th,
-.weekly-roster__table td {
+.weekly-roster__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for 7 days */
+  gap: 15px;
+}
+
+.weekly-roster__day {
   border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  vertical-align: top;
-}
-
-.weekly-roster__table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.weekly-roster__shift {
+  border-radius: 8px;
+  padding: 10px;
   background-color: #f9f9f9;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  padding: 4px;
-  margin-bottom: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
-.weekly-roster__shift-role {
-  font-weight: bold;
+.weekly-roster__day h3 {
+  margin-top: 0;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.weekly-roster__day-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Reuse daily-roster styles for individual shifts */
+.weekly-roster__day .daily-roster__shift {
+  margin-bottom: 0; /* Remove bottom margin from daily shift style */
+}
+
+.weekly-roster__day .daily-roster__shift-header {
   font-size: 0.9em;
 }
 
-.weekly-roster__shift-header {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 5px;
+.weekly-roster__day .daily-roster__shift-time {
+  font-size: 0.75em;
 }
 
-.weekly-roster__shift-icon {
+.weekly-roster__day .daily-roster__shift-staff {
+  font-size: 0.8em;
+}
+
+.weekly-roster__day .daily-roster__shift-icon {
   width: 20px;
   height: 20px;
 }
 
-.weekly-roster__shift-staff {
-  font-size: 0.85em;
-  color: #555;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.weekly-roster__staff-avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  object-fit: cover;
+.weekly-roster__day .daily-roster__conflict-indicator {
+  font-size: 1em;
 }

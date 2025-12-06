@@ -77,3 +77,14 @@
   object-fit: cover;
   border: 1px solid #ddd;
 }
+
+.daily-roster__shift--conflict {
+  border: 2px solid #dc3545; /* Red border for conflicts */
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
+}
+
+.daily-roster__conflict-indicator {
+  margin-left: auto; /* Pushes indicator to the right */
+  font-size: 1.2em;
+  cursor: help; /* Indicates tooltip on hover */
+}
