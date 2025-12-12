@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import type { StaffMember, Shift, RosterMetrics, ProgramNode } from '../types.ts';
+import type { StaffMember, Shift, RosterMetrics, ProgramNode } from '../types';
 import DailyRoster from '../components/DailyRoster';
 import AvailableStaff from '../components/AvailableStaff';
 import WeeklyRoster from '../components/WeeklyRoster';
@@ -8,18 +8,20 @@ import RosterMetricsDisplay from '../components/RosterMetrics';
 import FitnessChart from '../components/FitnessChart';
 import ProgramTree from '../components/ProgramTree';
 import ShiftDetailsModal from '../components/ShiftDetailsModal'; // Import ShiftDetailsModal
+import { generateRosterWithPythonGA } from '../services/rosterApi';
+import { staff as mockStaff, shifts as mockShifts } from '../mockData';
 import { DndContext } from '@dnd-kit/core';
 import type { DragEndEvent } from '@dnd-kit/core';
 import './HeroSelect.css';
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco' | 'hybrid_ga_cp' | 'neural_network' | 'pso'; // Add PSO
+type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco' | 'hybrid_ga_cp' | 'neural_network' | 'pso' | 'python_gp'; // Add PSO and Python GP
 type RosterView = 'weekly' | 'daily' | 'staff';
 
 const HeroSelect: React.FC = () => {
   const [allStaff, setAllStaff] = useState<StaffMember[]>([]);
   const [allShifts, setAllShifts] = useState<Shift[]>([]);
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-12-15T00:00:00'));
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-12-08T00:00:00'));
   const [rosterView, setRosterView] = useState<RosterView>('weekly');
   const [selectedStaffMemberId, setSelectedStaffMemberId] = useState<string | null>(null);
   const [selectedShiftForDetails, setSelectedShiftForDetails] = useState<Shift | null>(null); // New state for modal
@@ -32,41 +34,21 @@ const HeroSelect: React.FC = () => {
   const [gaHistory, setGaHistory] = useState<number[]>([]);
   const [gpProgramHistory, setGpProgramHistory] = useState<ProgramNode[]>([]);
   const [selectedGeneration, setSelectedGeneration] = useState(0);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm>('greedy');
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm>('python_gp');
   const [numGenerations, setNumGenerations] = useState<number>(50); // New state for numGenerations
 
   const fetchMetrics = useCallback((roster: Shift[]) => {
-    fetch('http://localhost:4000/api/roster/evaluate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(roster),
-    })
-    .then(res => res.json())
-    .then(data => {
-      setMetrics(data);
-      setRosterConflicts(data.conflicts || []); // Store conflicts
-    })
-    .catch(err => console.error('Error fetching metrics:', err));
+    // Mock metrics or fetch from backend if available
+    // fetch('http://localhost:4000/api/roster/evaluate', ... )
   }, []);
 
   useEffect(() => {
-    Promise.all([
-      fetch('http://localhost:4000/api/staff').then(res => res.json()),
-      fetch('http://localhost:4000/api/roster').then(res => res.json()),
-    ])
-    .then(([staffData, rosterData]) => {
-      setAllStaff(staffData);
-      setAllShifts(rosterData);
-      fetchMetrics(rosterData);
-      setLoading(false);
-    })
-    .catch(err => {
-      setError(err.message);
-      setLoading(false);
-    });
-  }, [fetchMetrics]);
+    setAllStaff(mockStaff);
+    setAllShifts(mockShifts);
+    setLoading(false);
+  }, []);
 
-  const handleGenerateRoster = () => {
+  const handleGenerateRoster = async () => {
     setIsGenerating(true);
     setMetrics(null);
     setGaHistory([]);
@@ -74,6 +56,29 @@ const HeroSelect: React.FC = () => {
 
     const emptyRoster = allShifts.map(shift => ({ ...shift, staffMemberId: undefined }));
     setAllShifts(emptyRoster);
+
+    if (selectedAlgorithm === 'python_gp') {
+      try {
+        const result = await generateRosterWithPythonGA(allStaff, emptyRoster, { generations: numGenerations });
+        
+        const updatedRoster = emptyRoster.map(shift => ({
+          ...shift,
+          staffMemberId: result.assignments[shift.id] || undefined
+        }));
+
+        setAllShifts(updatedRoster);
+        
+        // Use the detailed metrics returned from the server
+        setMetrics(result.metrics);
+        
+        setIsGenerating(false);
+      } catch (e: any) {
+        console.error('Error generating roster with Python GP:', e);
+        setError(e.message);
+        setIsGenerating(false);
+      }
+      return;
+    }
 
     fetch(`http://localhost:4000/api/roster/generate/${selectedAlgorithm}`, {
       method: 'POST',
@@ -204,7 +209,7 @@ const HeroSelect: React.FC = () => {
         <div className="hero-select__main-content">
           <div className="hero-select__title-container">
             <h2 className="hero-select__team-title">
-              {rosterView === 'weekly' && 'Full Week Roster'}
+              {rosterView === 'weekly' && `Full Week Roster (${allShifts.length} Shifts)`}
               {rosterView === 'daily' && `Roster for ${selectedDate.toDateString()}`}
               {rosterView === 'staff' && selectedStaffMember && `Roster for ${selectedStaffMember.name}`}
               {rosterView === 'staff' && !selectedStaffMember && 'Select a Staff Member'}
@@ -267,8 +272,9 @@ const HeroSelect: React.FC = () => {
                 <option value="hybrid_ga_cp">Hybrid GA+CP</option>
                 <option value="neural_network">Neural Network</option>
                 <option value="pso">Particle Swarm Optimization</option>
+                <option value="python_gp">Python GP (Server)</option>
               </select>
-              {(selectedAlgorithm === 'ga' || selectedAlgorithm === 'hybrid_ga_cp') && (
+              {(selectedAlgorithm === 'ga' || selectedAlgorithm === 'hybrid_ga_cp' || selectedAlgorithm === 'python_gp') && (
                 <div className="generation-input">
                   <label htmlFor="numGenerations">Generations:</label>
                   <input

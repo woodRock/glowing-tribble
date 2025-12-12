@@ -27,6 +27,47 @@ interface WeeklyRosterProps {
 
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+const WeeklyShiftSlot: React.FC<{
+  shift: Types.Shift;
+  onShiftClick: (shift: Types.Shift) => void;
+  getStaffMember: (id?: string) => Types.StaffMember | null;
+  getShiftConflicts: (shiftId: string, staffMemberId?: string) => Types.Conflict[];
+}> = ({ shift, onShiftClick, getStaffMember, getShiftConflicts }) => {
+  const { setNodeRef } = useDroppable({ id: shift.id });
+  const shiftConflicts = getShiftConflicts(shift.id, shift.staffMemberId);
+  const hasConflict = shiftConflicts.length > 0;
+
+  return (
+    <div
+      ref={setNodeRef}
+      className={`daily-roster__shift ${hasConflict ? 'daily-roster__shift--conflict' : ''}`}
+      onClick={() => onShiftClick(shift)}
+    >
+      <div className="daily-roster__shift-header">
+        <img src={roleIcons[shift.role]} alt={shift.role} className="daily-roster__shift-icon" />
+        <div className="daily-roster__shift-role">{shift.role}</div>
+        {hasConflict && (
+          <span className="daily-roster__conflict-indicator" title={shiftConflicts.map(c => c.message).join('\n')}>⚠️</span>
+        )}
+      </div>
+      <div className="daily-roster__shift-time">
+        {new Date(shift.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} -
+        {new Date(shift.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+      </div>
+      <div className="daily-roster__shift-staff">
+        {shift.staffMemberId ? (
+          <>
+            <img src={getStaffMember(shift.staffMemberId)?.avatar} alt={getStaffMember(shift.staffMemberId)?.name} className="daily-roster__staff-avatar" />
+            <span>{getStaffMember(shift.staffMemberId)?.name}</span>
+          </>
+        ) : (
+          'Unassigned'
+        )}
+      </div>
+    </div>
+  );
+};
+
 const WeeklyRoster: React.FC<WeeklyRosterProps> = ({ shifts, staff, selectedDate, onShiftClick, conflicts }) => {
   const getStaffMember = (staffId: string | undefined) => {
     if (!staffId) return null;
@@ -88,41 +129,15 @@ const WeeklyRoster: React.FC<WeeklyRosterProps> = ({ shifts, staff, selectedDate
             <h3>{weekDays[day.getDay()]} - {day.getDate()}/{day.getMonth() + 1}</h3>
             <div className="weekly-roster__day-content">
               {shiftsByDay[day.toDateString()].length > 0 ? (
-                shiftsByDay[day.toDateString()].map(shift => {
-                  const { setNodeRef } = useDroppable({ id: shift.id });
-                  const shiftConflicts = getShiftConflicts(shift.id, shift.staffMemberId);
-                  const hasConflict = shiftConflicts.length > 0;
-                  return (
-                    <div
-                      key={shift.id}
-                      ref={setNodeRef}
-                      className={`daily-roster__shift ${hasConflict ? 'daily-roster__shift--conflict' : ''}`}
-                      onClick={() => onShiftClick(shift)}
-                    >
-                      <div className="daily-roster__shift-header">
-                        <img src={roleIcons[shift.role]} alt={shift.role} className="daily-roster__shift-icon" />
-                        <div className="daily-roster__shift-role">{shift.role}</div>
-                        {hasConflict && (
-                          <span className="daily-roster__conflict-indicator" title={shiftConflicts.map(c => c.message).join('\n')}>⚠️</span>
-                        )}
-                      </div>
-                      <div className="daily-roster__shift-time">
-                        {new Date(shift.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} -
-                        {new Date(shift.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                      </div>
-                      <div className="daily-roster__shift-staff">
-                        {shift.staffMemberId ? (
-                          <>
-                            <img src={getStaffMember(shift.staffMemberId)?.avatar} alt={getStaffMember(shift.staffMemberId)?.name} className="daily-roster__staff-avatar" />
-                            <span>{getStaffMember(shift.staffMemberId)?.name}</span>
-                          </>
-                        ) : (
-                          'Unassigned'
-                        )}
-                      </div>
-                    </div>
-                  );
-                })
+                shiftsByDay[day.toDateString()].map(shift => (
+                  <WeeklyShiftSlot
+                    key={shift.id}
+                    shift={shift}
+                    onShiftClick={onShiftClick}
+                    getStaffMember={getStaffMember}
+                    getShiftConflicts={getShiftConflicts}
+                  />
+                ))
               ) : (
                 <p>No shifts</p>
               )}

@@ -9,11 +9,20 @@ export interface StaffPreferences {
   prefersConsecutiveDaysOff: boolean;
 }
 
+export interface ContractDetails {
+  minRestTime?: number;
+  maxWorkloadMinutes?: number;
+  maxSeqShifts?: { value: number; label?: string };
+  minSeqDaysOff?: { value: number; label?: string };
+  maxWeekendPatterns?: number;
+}
+
 export interface StaffMember {
   id: string;
   name: string;
   roles: Role[];
   preferences: StaffPreferences; // Added
+  contractDetails?: ContractDetails[];
   avatar: string;
 }
 
@@ -34,10 +43,23 @@ export interface Conflict {
 
 export interface RosterMetrics {
   totalPenalty: number;
-  penalties: {
-    desiredHours: number;
-    consecutiveDays: number;
-    clopen: number;
+  details: {
+    uncoveredShifts: number;
+    skillMismatches: number;
+    availabilityMismatches: number;
+    overlaps: number;
+    minRestViolations: number;
+    maxWorkloadViolations: number;
+    minWorkloadViolations: number;
+    maxConsecutiveShiftsViolations: number;
+    minConsecutiveShiftsViolations: number;
+    minConsecutiveDaysOffViolations: number;
+    maxWeekendPatternViolations: number;
+    shiftOffRequestPenalties: number;
+    shiftOnRequestPenalties: number;
+    coverRequirementPenalties: number;
+    minStaffForRoleViolations: number;
+    desiredHoursPenalties: number;
   };
   conflicts: Conflict[];
 }
