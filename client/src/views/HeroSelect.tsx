@@ -7,46 +7,111 @@ import StaffRoster from '../components/StaffRoster';
 import RosterMetricsDisplay from '../components/RosterMetrics';
 import FitnessChart from '../components/FitnessChart';
 import ProgramTree from '../components/ProgramTree';
-import ShiftDetailsModal from '../components/ShiftDetailsModal'; // Import ShiftDetailsModal
-import { generateRosterWithPythonGA } from '../services/rosterApi';
+import ShiftDetailsModal from '../components/ShiftDetailsModal'; 
+import { getBenchmarks, getBenchmarkData } from '../services/rosterApi';
+import type { PythonStaffData, PythonShiftData } from '../services/rosterApi'; // Import benchmark services
 import { staff as mockStaff, shifts as mockShifts } from '../mockData';
 import { DndContext } from '@dnd-kit/core';
 import type { DragEndEvent } from '@dnd-kit/core';
 import './HeroSelect.css';
 
 const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-type Algorithm = 'greedy' | 'ga' | 'gp' | 'cp' | 'aco' | 'hybrid_ga_cp' | 'neural_network' | 'pso' | 'python_gp'; // Add PSO and Python GP
+type Algorithm = 'python_ga' | 'python_gp' | 'python_pso' | 'python_aco' | 'python_de' | 'python_es'; 
 type RosterView = 'weekly' | 'daily' | 'staff';
 
 const HeroSelect: React.FC = () => {
   const [allStaff, setAllStaff] = useState<StaffMember[]>([]);
   const [allShifts, setAllShifts] = useState<Shift[]>([]);
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-12-08T00:00:00'));
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date('2025-01-01T00:00:00')); // Default to benchmark date
   const [rosterView, setRosterView] = useState<RosterView>('weekly');
   const [selectedStaffMemberId, setSelectedStaffMemberId] = useState<string | null>(null);
-  const [selectedShiftForDetails, setSelectedShiftForDetails] = useState<Shift | null>(null); // New state for modal
-  const [isShiftModalOpen, setIsShiftModalOpen] = useState(false); // New state for modal
+  const [selectedShiftForDetails, setSelectedShiftForDetails] = useState<Shift | null>(null);
+  const [isShiftModalOpen, setIsShiftModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [metrics, setMetrics] = useState<RosterMetrics | null>(null);
-  const [rosterConflicts, setRosterConflicts] = useState<Types.Conflict[]>([]); // New state for conflicts
+  const [rosterConflicts, setRosterConflicts] = useState<any[]>([]); 
   const [gaHistory, setGaHistory] = useState<number[]>([]);
   const [gpProgramHistory, setGpProgramHistory] = useState<ProgramNode[]>([]);
   const [selectedGeneration, setSelectedGeneration] = useState(0);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm>('python_gp');
-  const [numGenerations, setNumGenerations] = useState<number>(50); // New state for numGenerations
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm>('python_ga');
+  const [numGenerations, setNumGenerations] = useState<number>(50);
+  
+  // Benchmark State
+  const [benchmarks, setBenchmarks] = useState<string[]>([]);
+  const [selectedBenchmark, setSelectedBenchmark] = useState<string>('');
 
   const fetchMetrics = useCallback((roster: Shift[]) => {
     // Mock metrics or fetch from backend if available
-    // fetch('http://localhost:4000/api/roster/evaluate', ... )
   }, []);
 
   useEffect(() => {
+    // Fetch benchmarks on load
+    getBenchmarks().then(files => {
+      setBenchmarks(files);
+      if (files.length > 0) {
+          // Optional: Load first benchmark by default? Or stick to mock data until selected?
+          // Let's load the first one if available, else mock
+          // handleBenchmarkChange(files[0]); 
+      }
+    }).catch(err => console.error("Failed to load benchmarks", err));
+
     setAllStaff(mockStaff);
     setAllShifts(mockShifts);
     setLoading(false);
   }, []);
+
+  const handleBenchmarkChange = async (filename: string) => {
+      setSelectedBenchmark(filename);
+      if (!filename) return;
+
+      setLoading(true);
+      try {
+          const data = await getBenchmarkData(filename);
+          
+          // Map Python/JSON data to Frontend Types
+          const mappedStaff: StaffMember[] = data.staff_data.map((s: PythonStaffData) => ({
+              id: s.id,
+              name: s.id, // Benchmark data doesn't have names, use ID
+              roles: s.skills,
+              avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${s.id}`, // Generate avatar
+              preferences: {
+                  desiredHours: s.preferences?.desired_hours || 40,
+                  availability: s.availability_slots.map(slot => ({
+                      day: new Date(slot.start_time).toLocaleDateString('en-US', { weekday: 'long' }),
+                      startTime: slot.start_time,
+                      endTime: slot.end_time
+                  }))
+              }
+          }));
+
+          const mappedShifts: Shift[] = data.shift_data.map((s: PythonShiftData) => ({
+              id: s.id,
+              role: s.role,
+              startTime: s.start_time,
+              endTime: s.end_time,
+              staffMemberId: undefined
+          }));
+
+          setAllStaff(mappedStaff);
+          setAllShifts(mappedShifts);
+          
+          // Update selected date to the start of the benchmark problem
+          if (mappedShifts.length > 0) {
+              const firstShiftDate = new Date(mappedShifts[0].startTime);
+              setSelectedDate(firstShiftDate);
+          }
+
+          setMetrics(null);
+          setGaHistory([]);
+      } catch (err) {
+          console.error("Error loading benchmark:", err);
+          setError("Failed to load benchmark");
+      } finally {
+          setLoading(false);
+      }
+  };
 
   const handleGenerateRoster = async () => {
     setIsGenerating(true);
@@ -57,98 +122,100 @@ const HeroSelect: React.FC = () => {
     const emptyRoster = allShifts.map(shift => ({ ...shift, staffMemberId: undefined }));
     setAllShifts(emptyRoster);
 
-    if (selectedAlgorithm === 'python_gp') {
-      try {
-        const result = await generateRosterWithPythonGA(allStaff, emptyRoster, { generations: numGenerations });
-        
-        const updatedRoster = emptyRoster.map(shift => ({
-          ...shift,
-          staffMemberId: result.assignments[shift.id] || undefined
-        }));
-
-        setAllShifts(updatedRoster);
-        
-        // Use the detailed metrics returned from the server
-        setMetrics(result.metrics);
-        
-        setIsGenerating(false);
-      } catch (e: any) {
-        console.error('Error generating roster with Python GP:', e);
-        setError(e.message);
-        setIsGenerating(false);
+    // Map Staff and Shift data to Python API format
+    // This mapping logic was previously in the Node bridge or service, we need it here now.
+    const pythonStaffData = allStaff.map(staff => ({
+      id: staff.id,
+      skills: staff.roles,
+      availability_slots: staff.preferences.availability.map(slot => ({
+        start_time: slot.startTime,
+        end_time: slot.endTime
+      })),
+      contract_details: [{
+        min_rest_time: 60,
+        max_workload_minutes: 480
+      }],
+      preferences: {
+        desired_hours: staff.preferences.desiredHours
       }
-      return;
-    }
+    }));
 
-    fetch(`http://localhost:4000/api/roster/generate/${selectedAlgorithm}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ numGenerations: numGenerations }), // Pass numGenerations
-    })
-      .then(res => res.json())
-      .then(result => {
-        if (selectedAlgorithm === 'greedy') {
-          const finalRoster = result.roster;
-          if (!finalRoster) {
-            console.error('Greedy algorithm did not return a roster.');
-            setIsGenerating(false);
-            return;
-          }
-          let i = 0;
-          const interval = setInterval(() => {
-            if (i < finalRoster.length) {
-              const shiftToUpdate = finalRoster[i];
-              if (shiftToUpdate) {
-                setAllShifts(prev => {
-                  const newShifts = [...prev];
-                  const shiftIndex = newShifts.findIndex(s => s && s.id === shiftToUpdate.id);
-                  if (shiftIndex !== -1) {
-                    newShifts[shiftIndex] = shiftToUpdate;
-                  }
-                  return newShifts;
-                });
-              }
-              i++;
-            } else {
-              clearInterval(interval);
-              setAllShifts(finalRoster);
-              fetchMetrics(finalRoster);
-              setIsGenerating(false);
-            }
-          }, 50);
-        } else {
-          if (result.roster) {
-            setAllShifts(result.roster);
-            fetchMetrics(result.roster);
-          }
-          if (result.history) {
-            setGaHistory(result.history);
-          }
-          if (result.programHistory) {
-            setGpProgramHistory(result.programHistory);
-            setSelectedGeneration(result.programHistory.length - 1);
-          }
-          setIsGenerating(false);
+    const pythonShiftData = emptyRoster.map(shift => ({
+      id: shift.id,
+      required_skills: [shift.role],
+      start_time: shift.startTime,
+      end_time: shift.endTime,
+      role: shift.role
+    }));
+
+    const algoName = selectedAlgorithm.replace('python_', ''); // 'ga', 'gp', ...
+
+    try {
+        const response = await fetch('http://localhost:5001/generate_roster', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                algorithm: algoName,
+                generations: numGenerations,
+                population_size: 100,
+                staff_data: pythonStaffData,
+                shift_data: pythonShiftData,
+                // requests: ... (If we had request data in the UI state, we'd pass it here)
+            }),
+        });
+
+        const result = await response.json();
+
+        if (result.error) {
+            throw new Error(result.error);
         }
-      })
-      .catch(err => {
-        console.error('Error generating roster:', err);
+
+        if (result.roster_details && result.roster_details.roster) {
+            const assignmentMap = result.roster_details.roster;
+            const updatedRoster = emptyRoster.map(shift => ({
+                ...shift,
+                staffMemberId: assignmentMap[shift.id] || undefined
+            }));
+            
+            setAllShifts(updatedRoster);
+            
+            // Map metrics
+            const serverMetrics = result.roster_details.metrics || {};
+            setMetrics({
+                totalPenalty: serverMetrics.total_penalty || result.roster_details.fitness || 0,
+                details: {
+                    uncoveredShifts: serverMetrics.uncovered_shifts_count || 0,
+                    skillMismatches: serverMetrics.skill_mismatches_count || 0,
+                    availabilityMismatches: serverMetrics.availability_mismatches_count || 0,
+                    overlaps: serverMetrics.overlap_penalties_count || 0,
+                    minRestViolations: serverMetrics.min_rest_violations_count || 0,
+                    maxWorkloadViolations: serverMetrics.max_workload_violations_count || 0,
+                    minWorkloadViolations: serverMetrics.min_workload_violations_count || 0,
+                    maxConsecutiveShiftsViolations: serverMetrics.max_consecutive_shift_violations_count || 0,
+                    minConsecutiveShiftsViolations: serverMetrics.min_consecutive_shift_violations_count || 0,
+                    minConsecutiveDaysOffViolations: serverMetrics.min_consecutive_days_off_violations_count || 0,
+                    maxWeekendPatternViolations: serverMetrics.max_weekend_pattern_violations_count || 0,
+                    shiftOffRequestPenalties: serverMetrics.shift_off_request_penalties || 0,
+                    shiftOnRequestPenalties: serverMetrics.shift_on_request_penalties || 0,
+                    coverRequirementPenalties: serverMetrics.cover_requirement_penalties || 0,
+                    minStaffForRoleViolations: serverMetrics.min_staff_for_role_violations_count || 0,
+                    desiredHoursPenalties: serverMetrics.desired_hours_penalties || 0
+                },
+                conflicts: [] 
+            });
+        }
+        
+    } catch (e: any) {
+        console.error('Error generating roster:', e);
+        setError(e.message);
+    } finally {
         setIsGenerating(false);
-      });
+    }
   };
 
   const handleSaveRoster = () => {
-    fetch('http://localhost:4000/api/roster', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(allShifts),
-    })
-    .then(res => res.json())
-    .then((updatedRoster: Shift[]) => {
-      setAllShifts(updatedRoster);
-      alert('Roster saved!');
-    })
-    .catch(err => console.error('Error saving roster:', err));
+    console.log("Save roster not implemented for Python API yet.");
+    alert("Save functionality is currently disabled.");
   };
 
   const handleClearRoster = () => {
@@ -237,6 +304,21 @@ const HeroSelect: React.FC = () => {
                 Staff
               </button>
             </div>
+            
+            {/* Benchmark Selector */}
+            <div className="hero-select__benchmark-select" style={{ marginLeft: '1rem' }}>
+                <select 
+                    value={selectedBenchmark}
+                    onChange={(e) => handleBenchmarkChange(e.target.value)}
+                    disabled={isGenerating}
+                >
+                    <option value="">-- Load Benchmark --</option>
+                    {benchmarks.map(b => (
+                        <option key={b} value={b}>{b.replace('.json', '')}</option>
+                    ))}
+                </select>
+            </div>
+
             {rosterView === 'daily' && (
               <div className="hero-select__date-nav">
                 <button onClick={() => setSelectedDate(prev => new Date(prev.getTime() - 24 * 60 * 60 * 1000))} disabled={isGenerating}>Prev Day</button>
@@ -264,17 +346,16 @@ const HeroSelect: React.FC = () => {
                 onChange={e => setSelectedAlgorithm(e.target.value as Algorithm)}
                 disabled={isGenerating}
               >
-                <option value="greedy">Greedy Algorithm</option>
-                <option value="ga">Genetic Algorithm</option>
-                <option value="gp">Genetic Programming</option>
-                <option value="cp">Constraint Programming</option>
-                <option value="aco">Ant Colony Optimization</option>
-                <option value="hybrid_ga_cp">Hybrid GA+CP</option>
-                <option value="neural_network">Neural Network</option>
-                <option value="pso">Particle Swarm Optimization</option>
-                <option value="python_gp">Python GP (Server)</option>
+                <optgroup label="Python Solvers (High Performance)">
+                    <option value="python_ga">Genetic Algorithm (Best)</option>
+                    <option value="python_aco">Ant Colony (Fastest)</option>
+                    <option value="python_gp">Genetic Programming</option>
+                    <option value="python_pso">PSO</option>
+                    <option value="python_de">Differential Evolution</option>
+                    <option value="python_es">Evolution Strategy</option>
+                </optgroup>
               </select>
-              {(selectedAlgorithm === 'ga' || selectedAlgorithm === 'hybrid_ga_cp' || selectedAlgorithm === 'python_gp') && (
+              {(selectedAlgorithm.includes('ga') || selectedAlgorithm.includes('gp') || selectedAlgorithm.includes('python')) && (
                 <div className="generation-input">
                   <label htmlFor="numGenerations">Generations:</label>
                   <input

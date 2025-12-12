@@ -1,0 +1,278 @@
+{
+  "staff_data": [
+    {
+      "id": "Staff_0",
+      "skills": [
+        "Barista"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 2400,
+          "min_workload_minutes": 0
+        }
+      ],
+      "preferences": {
+        "desired_hours": 18.571428571428573
+      }
+    },
+    {
+      "id": "Staff_1",
+      "skills": [
+        "Cleaner",
+        "Cashier"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 2400,
+          "min_workload_minutes": 0
+        }
+      ],
+      "preferences": {
+        "desired_hours": 22.142857142857142
+      }
+    },
+    {
+      "id": "Staff_2",
+      "skills": [
+        "Cleaner",
+        "Barista"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 2400,
+          "min_workload_minutes": 0
+        }
+      ],
+      "preferences": {
+        "desired_hours": 27.142857142857142
+      }
+    },
+    {
+      "id": "Staff_3",
+      "skills": [
+        "Cleaner",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 2400,
+          "min_workload_minutes": 0
+        }
+      ],
+      "preferences": {
+        "desired_hours": 15.714285714285715
+      }
+    },
+    {
+      "id": "Staff_4",
+      "skills": [
+        "Cashier"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 2400,
+          "min_workload_minutes": 0
+        }
+      ],
+      "preferences": {
+        "desired_hours": 21.42857142857143
+      }
+    }
+  ],
+  "shift_data": [
+    {
+      "id": "Shift_1",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-01T11:00:00",
+      "end_time": "2025-01-01T15:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_2",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-01T11:00:00",
+      "end_time": "2025-01-01T16:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_3",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-02T18:00:00",
+      "end_time": "2025-01-02T21:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_4",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-02T17:00:00",
+      "end_time": "2025-01-02T21:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_5",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-03T16:00:00",
+      "end_time": "2025-01-03T21:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_6",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-03T10:00:00",
+      "end_time": "2025-01-03T15:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_7",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-04T09:00:00",
+      "end_time": "2025-01-04T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_8",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-04T11:00:00",
+      "end_time": "2025-01-04T16:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_9",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-05T10:00:00",
+      "end_time": "2025-01-05T16:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_10",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-05T10:00:00",
+      "end_time": "2025-01-05T16:00:00",
+      "role": "Manager"
+    }
+  ],
+  "requests": {
+    "shift_off": [],
+    "shift_on": [],
+    "cover": []
+  }
+}

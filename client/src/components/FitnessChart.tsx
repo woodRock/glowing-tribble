@@ -18,10 +18,12 @@ const FitnessChart: React.FC<FitnessChartProps> = ({ history }) => {
   const minFitness = Math.min(...history);
 
   const getX = (index: number) => {
+    if (history.length <= 1) return padding;
     return padding + (index / (history.length - 1)) * (width - padding * 2);
   };
 
   const getY = (value: number) => {
+    if (maxFitness === minFitness) return height / 2;
     return height - padding - ((value - minFitness) / (maxFitness - minFitness)) * (height - padding * 2);
   };
 

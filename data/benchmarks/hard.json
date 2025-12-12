@@ -1,0 +1,3953 @@
+{
+  "staff_data": [
+    {
+      "id": "Staff_0",
+      "skills": [
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6720.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 3
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 100.0
+      }
+    },
+    {
+      "id": "Staff_1",
+      "skills": [
+        "Cashier",
+        "Manager",
+        "Barista",
+        "Cleaner"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 4800.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 100.0
+      }
+    },
+    {
+      "id": "Staff_2",
+      "skills": [
+        "Cashier",
+        "Barista",
+        "Cleaner"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 10800.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 100.0
+      }
+    },
+    {
+      "id": "Staff_3",
+      "skills": [
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 4800.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 96.0
+      }
+    },
+    {
+      "id": "Staff_4",
+      "skills": [
+        "Cleaner",
+        "Cook",
+        "Manager",
+        "Barista"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6480.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 4
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 100.0
+      }
+    },
+    {
+      "id": "Staff_5",
+      "skills": [
+        "Manager",
+        "Cook",
+        "Barista",
+        "Cashier"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 7440.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 3
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 108.0
+      }
+    },
+    {
+      "id": "Staff_6",
+      "skills": [
+        "Cashier",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 7680.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 4
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 124.0
+      }
+    },
+    {
+      "id": "Staff_7",
+      "skills": [
+        "Manager",
+        "Cashier",
+        "Cleaner"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 9600.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 80.0
+      }
+    },
+    {
+      "id": "Staff_8",
+      "skills": [
+        "Manager",
+        "Cleaner"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 7680.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 80.0
+      }
+    },
+    {
+      "id": "Staff_9",
+      "skills": [
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6000.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 140.0
+      }
+    },
+    {
+      "id": "Staff_10",
+      "skills": [
+        "Manager",
+        "Cook"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6960.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 88.0
+      }
+    },
+    {
+      "id": "Staff_11",
+      "skills": [
+        "Cleaner",
+        "Cashier"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 5040.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 132.0
+      }
+    },
+    {
+      "id": "Staff_12",
+      "skills": [
+        "Cashier",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 8640.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 144.0
+      }
+    },
+    {
+      "id": "Staff_13",
+      "skills": [
+        "Barista"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 9120.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 116.0
+      }
+    },
+    {
+      "id": "Staff_14",
+      "skills": [
+        "Barista",
+        "Cashier",
+        "Cook"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 4800.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 4
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 124.0
+      }
+    },
+    {
+      "id": "Staff_15",
+      "skills": [
+        "Cook"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 8160.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 104.0
+      }
+    },
+    {
+      "id": "Staff_16",
+      "skills": [
+        "Cashier",
+        "Cook",
+        "Barista",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 5280.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 104.0
+      }
+    },
+    {
+      "id": "Staff_17",
+      "skills": [
+        "Manager",
+        "Barista",
+        "Cleaner",
+        "Cashier"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 5040.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 3
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 120.0
+      }
+    },
+    {
+      "id": "Staff_18",
+      "skills": [
+        "Cook"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 8640.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 88.0
+      }
+    },
+    {
+      "id": "Staff_19",
+      "skills": [
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 10560.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 88.0
+      }
+    },
+    {
+      "id": "Staff_20",
+      "skills": [
+        "Cleaner",
+        "Barista",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6480.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 128.0
+      }
+    },
+    {
+      "id": "Staff_21",
+      "skills": [
+        "Barista",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6480.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 5
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 156.0
+      }
+    },
+    {
+      "id": "Staff_22",
+      "skills": [
+        "Manager",
+        "Cleaner",
+        "Cook",
+        "Barista"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 10320.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 4
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 80.0
+      }
+    },
+    {
+      "id": "Staff_23",
+      "skills": [
+        "Cook",
+        "Cashier",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 5280.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 124.0
+      }
+    },
+    {
+      "id": "Staff_24",
+      "skills": [
+        "Cleaner",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 6960.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 136.0
+      }
+    },
+    {
+      "id": "Staff_25",
+      "skills": [
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 10320.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 4
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 2
+        }
+      ],
+      "preferences": {
+        "desired_hours": 120.0
+      }
+    },
+    {
+      "id": "Staff_26",
+      "skills": [
+        "Cook",
+        "Barista",
+        "Cleaner"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 5280.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 3
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 116.0
+      }
+    },
+    {
+      "id": "Staff_27",
+      "skills": [
+        "Cashier",
+        "Cleaner",
+        "Barista",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-09T07:00:00",
+          "end_time": "2025-01-09T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 8400.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 6
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 116.0
+      }
+    },
+    {
+      "id": "Staff_28",
+      "skills": [
+        "Cook",
+        "Barista",
+        "Cashier",
+        "Cleaner"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-03T07:00:00",
+          "end_time": "2025-01-03T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-10T07:00:00",
+          "end_time": "2025-01-10T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-16T07:00:00",
+          "end_time": "2025-01-16T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-23T07:00:00",
+          "end_time": "2025-01-23T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 8880.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 3
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 96.0
+      }
+    },
+    {
+      "id": "Staff_29",
+      "skills": [
+        "Cook",
+        "Cashier",
+        "Manager"
+      ],
+      "availability_slots": [
+        {
+          "start_time": "2025-01-01T07:00:00",
+          "end_time": "2025-01-01T23:00:00"
+        },
+        {
+          "start_time": "2025-01-02T07:00:00",
+          "end_time": "2025-01-02T23:00:00"
+        },
+        {
+          "start_time": "2025-01-04T07:00:00",
+          "end_time": "2025-01-04T23:00:00"
+        },
+        {
+          "start_time": "2025-01-05T07:00:00",
+          "end_time": "2025-01-05T23:00:00"
+        },
+        {
+          "start_time": "2025-01-06T07:00:00",
+          "end_time": "2025-01-06T23:00:00"
+        },
+        {
+          "start_time": "2025-01-07T07:00:00",
+          "end_time": "2025-01-07T23:00:00"
+        },
+        {
+          "start_time": "2025-01-08T07:00:00",
+          "end_time": "2025-01-08T23:00:00"
+        },
+        {
+          "start_time": "2025-01-11T07:00:00",
+          "end_time": "2025-01-11T23:00:00"
+        },
+        {
+          "start_time": "2025-01-12T07:00:00",
+          "end_time": "2025-01-12T23:00:00"
+        },
+        {
+          "start_time": "2025-01-13T07:00:00",
+          "end_time": "2025-01-13T23:00:00"
+        },
+        {
+          "start_time": "2025-01-14T07:00:00",
+          "end_time": "2025-01-14T23:00:00"
+        },
+        {
+          "start_time": "2025-01-15T07:00:00",
+          "end_time": "2025-01-15T23:00:00"
+        },
+        {
+          "start_time": "2025-01-17T07:00:00",
+          "end_time": "2025-01-17T23:00:00"
+        },
+        {
+          "start_time": "2025-01-18T07:00:00",
+          "end_time": "2025-01-18T23:00:00"
+        },
+        {
+          "start_time": "2025-01-19T07:00:00",
+          "end_time": "2025-01-19T23:00:00"
+        },
+        {
+          "start_time": "2025-01-20T07:00:00",
+          "end_time": "2025-01-20T23:00:00"
+        },
+        {
+          "start_time": "2025-01-21T07:00:00",
+          "end_time": "2025-01-21T23:00:00"
+        },
+        {
+          "start_time": "2025-01-22T07:00:00",
+          "end_time": "2025-01-22T23:00:00"
+        },
+        {
+          "start_time": "2025-01-24T07:00:00",
+          "end_time": "2025-01-24T23:00:00"
+        },
+        {
+          "start_time": "2025-01-25T07:00:00",
+          "end_time": "2025-01-25T23:00:00"
+        },
+        {
+          "start_time": "2025-01-26T07:00:00",
+          "end_time": "2025-01-26T23:00:00"
+        },
+        {
+          "start_time": "2025-01-27T07:00:00",
+          "end_time": "2025-01-27T23:00:00"
+        },
+        {
+          "start_time": "2025-01-28T07:00:00",
+          "end_time": "2025-01-28T23:00:00"
+        }
+      ],
+      "contract_details": [
+        {
+          "min_rest_time": 60,
+          "max_workload_minutes": 5040.0,
+          "min_workload_minutes": 0,
+          "max_seq_shifts": {
+            "value": 4
+          },
+          "min_seq_days_off": {
+            "value": 1
+          },
+          "max_weekend_patterns": 1
+        }
+      ],
+      "preferences": {
+        "desired_hours": 148.0
+      }
+    }
+  ],
+  "shift_data": [
+    {
+      "id": "Shift_1",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-01T10:00:00",
+      "end_time": "2025-01-01T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_2",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-01T08:00:00",
+      "end_time": "2025-01-01T13:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_3",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-01T09:00:00",
+      "end_time": "2025-01-01T15:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_4",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-02T07:00:00",
+      "end_time": "2025-01-02T15:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_5",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-02T11:00:00",
+      "end_time": "2025-01-02T15:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_6",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-02T17:00:00",
+      "end_time": "2025-01-02T22:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_7",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-03T12:00:00",
+      "end_time": "2025-01-03T14:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_8",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-03T07:00:00",
+      "end_time": "2025-01-03T15:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_9",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-03T11:00:00",
+      "end_time": "2025-01-03T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_10",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-04T08:00:00",
+      "end_time": "2025-01-04T13:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_11",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-04T11:00:00",
+      "end_time": "2025-01-04T16:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_12",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-04T07:00:00",
+      "end_time": "2025-01-04T14:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_13",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-05T11:00:00",
+      "end_time": "2025-01-05T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_14",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-05T08:00:00",
+      "end_time": "2025-01-05T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_15",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-05T17:00:00",
+      "end_time": "2025-01-05T23:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_16",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-06T08:00:00",
+      "end_time": "2025-01-06T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_17",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-06T07:00:00",
+      "end_time": "2025-01-06T14:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_18",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-06T11:00:00",
+      "end_time": "2025-01-06T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_19",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-07T09:00:00",
+      "end_time": "2025-01-07T14:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_20",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-07T16:00:00",
+      "end_time": "2025-01-07T23:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_21",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-07T12:00:00",
+      "end_time": "2025-01-07T16:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_22",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-08T17:00:00",
+      "end_time": "2025-01-08T23:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_23",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-08T17:00:00",
+      "end_time": "2025-01-08T23:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_24",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-08T09:00:00",
+      "end_time": "2025-01-08T13:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_25",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-09T17:00:00",
+      "end_time": "2025-01-09T22:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_26",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-09T07:00:00",
+      "end_time": "2025-01-09T14:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_27",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-09T09:00:00",
+      "end_time": "2025-01-09T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_28",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-10T16:00:00",
+      "end_time": "2025-01-10T23:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_29",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-10T11:00:00",
+      "end_time": "2025-01-10T15:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_30",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-10T18:00:00",
+      "end_time": "2025-01-10T21:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_31",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-11T11:00:00",
+      "end_time": "2025-01-11T14:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_32",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-11T16:00:00",
+      "end_time": "2025-01-11T22:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_33",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-11T17:00:00",
+      "end_time": "2025-01-11T22:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_34",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-12T18:00:00",
+      "end_time": "2025-01-12T23:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_35",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-12T12:00:00",
+      "end_time": "2025-01-12T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_36",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-12T18:00:00",
+      "end_time": "2025-01-12T21:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_37",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-13T08:00:00",
+      "end_time": "2025-01-13T14:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_38",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-13T10:00:00",
+      "end_time": "2025-01-13T16:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_39",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-13T07:00:00",
+      "end_time": "2025-01-13T13:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_40",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-14T09:00:00",
+      "end_time": "2025-01-14T15:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_41",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-14T09:00:00",
+      "end_time": "2025-01-14T14:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_42",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-14T09:00:00",
+      "end_time": "2025-01-14T13:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_43",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-15T17:00:00",
+      "end_time": "2025-01-15T21:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_44",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-15T17:00:00",
+      "end_time": "2025-01-15T22:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_45",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-15T12:00:00",
+      "end_time": "2025-01-15T15:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_46",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-16T10:00:00",
+      "end_time": "2025-01-16T16:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_47",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-16T09:00:00",
+      "end_time": "2025-01-16T13:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_48",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-16T16:00:00",
+      "end_time": "2025-01-16T21:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_49",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-17T09:00:00",
+      "end_time": "2025-01-17T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_50",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-17T09:00:00",
+      "end_time": "2025-01-17T14:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_51",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-17T07:00:00",
+      "end_time": "2025-01-17T13:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_52",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-18T07:00:00",
+      "end_time": "2025-01-18T15:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_53",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-18T07:00:00",
+      "end_time": "2025-01-18T14:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_54",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-18T07:00:00",
+      "end_time": "2025-01-18T13:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_55",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-19T09:00:00",
+      "end_time": "2025-01-19T13:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_56",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-19T16:00:00",
+      "end_time": "2025-01-19T21:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_57",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-19T12:00:00",
+      "end_time": "2025-01-19T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_58",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-20T07:00:00",
+      "end_time": "2025-01-20T14:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_59",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-20T16:00:00",
+      "end_time": "2025-01-20T21:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_60",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-20T18:00:00",
+      "end_time": "2025-01-20T22:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_61",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-21T16:00:00",
+      "end_time": "2025-01-21T23:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_62",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-21T09:00:00",
+      "end_time": "2025-01-21T15:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_63",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-21T17:00:00",
+      "end_time": "2025-01-21T21:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_64",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-22T07:00:00",
+      "end_time": "2025-01-22T15:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_65",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-22T18:00:00",
+      "end_time": "2025-01-22T22:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_66",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-22T08:00:00",
+      "end_time": "2025-01-22T14:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_67",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-23T18:00:00",
+      "end_time": "2025-01-23T22:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_68",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-23T08:00:00",
+      "end_time": "2025-01-23T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_69",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-23T07:00:00",
+      "end_time": "2025-01-23T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_70",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-24T18:00:00",
+      "end_time": "2025-01-24T22:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_71",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-24T08:00:00",
+      "end_time": "2025-01-24T13:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_72",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-24T07:00:00",
+      "end_time": "2025-01-24T14:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_73",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-25T17:00:00",
+      "end_time": "2025-01-25T23:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_74",
+      "required_skills": [
+        "Barista"
+      ],
+      "start_time": "2025-01-25T08:00:00",
+      "end_time": "2025-01-25T14:00:00",
+      "role": "Barista"
+    },
+    {
+      "id": "Shift_75",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-25T18:00:00",
+      "end_time": "2025-01-25T22:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_76",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-26T07:00:00",
+      "end_time": "2025-01-26T15:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_77",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-26T11:00:00",
+      "end_time": "2025-01-26T14:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_78",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-26T10:00:00",
+      "end_time": "2025-01-26T14:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_79",
+      "required_skills": [
+        "Cashier"
+      ],
+      "start_time": "2025-01-27T07:00:00",
+      "end_time": "2025-01-27T13:00:00",
+      "role": "Cashier"
+    },
+    {
+      "id": "Shift_80",
+      "required_skills": [
+        "Cleaner"
+      ],
+      "start_time": "2025-01-27T10:00:00",
+      "end_time": "2025-01-27T16:00:00",
+      "role": "Cleaner"
+    },
+    {
+      "id": "Shift_81",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-27T09:00:00",
+      "end_time": "2025-01-27T15:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_82",
+      "required_skills": [
+        "Cook"
+      ],
+      "start_time": "2025-01-28T07:00:00",
+      "end_time": "2025-01-28T13:00:00",
+      "role": "Cook"
+    },
+    {
+      "id": "Shift_83",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-28T18:00:00",
+      "end_time": "2025-01-28T21:00:00",
+      "role": "Manager"
+    },
+    {
+      "id": "Shift_84",
+      "required_skills": [
+        "Manager"
+      ],
+      "start_time": "2025-01-28T12:00:00",
+      "end_time": "2025-01-28T16:00:00",
+      "role": "Manager"
+    }
+  ],
+  "requests": {
+    "shift_off": [
+      {
+        "employee_id": "Staff_17",
+        "day_offset": 0,
+        "shift_id": "Shift_39",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_23",
+        "day_offset": 0,
+        "shift_id": "Shift_20",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_15",
+        "day_offset": 0,
+        "shift_id": "Shift_69",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_16",
+        "day_offset": 0,
+        "shift_id": "Shift_70",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_8",
+        "day_offset": 0,
+        "shift_id": "Shift_53",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_3",
+        "day_offset": 0,
+        "shift_id": "Shift_18",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_26",
+        "day_offset": 0,
+        "shift_id": "Shift_24",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_1",
+        "day_offset": 0,
+        "shift_id": "Shift_80",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_4",
+        "day_offset": 0,
+        "shift_id": "Shift_43",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_28",
+        "day_offset": 0,
+        "shift_id": "Shift_84",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_19",
+        "day_offset": 0,
+        "shift_id": "Shift_77",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_6",
+        "day_offset": 0,
+        "shift_id": "Shift_12",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_18",
+        "day_offset": 0,
+        "shift_id": "Shift_43",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_16",
+        "day_offset": 0,
+        "shift_id": "Shift_38",
+        "weight": 100
+      },
+      {
+        "employee_id": "Staff_15",
+        "day_offset": 0,
+        "shift_id": "Shift_22",
+        "weight": 100
+      }
+    ],
+    "shift_on": [],
+    "cover": []
+  }
+}
