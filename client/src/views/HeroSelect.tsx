@@ -8,6 +8,7 @@ import RosterMetricsDisplay from '../components/RosterMetrics';
 import FitnessChart from '../components/FitnessChart';
 import ProgramTree from '../components/ProgramTree';
 import ShiftDetailsModal from '../components/ShiftDetailsModal'; 
+import BenchmarkAnalysis from '../components/BenchmarkAnalysis'; // Import Analysis
 import { getBenchmarks, getBenchmarkData } from '../services/rosterApi';
 import type { PythonStaffData, PythonShiftData } from '../services/rosterApi'; // Import benchmark services
 import { staff as mockStaff, shifts as mockShifts } from '../mockData';
@@ -41,6 +42,7 @@ const HeroSelect: React.FC = () => {
   // Benchmark State
   const [benchmarks, setBenchmarks] = useState<string[]>([]);
   const [selectedBenchmark, setSelectedBenchmark] = useState<string>('');
+  const [benchmarkRequests, setBenchmarkRequests] = useState<any>(null); // New state
 
   const fetchMetrics = useCallback((roster: Shift[]) => {
     // Mock metrics or fetch from backend if available
@@ -69,6 +71,7 @@ const HeroSelect: React.FC = () => {
       setLoading(true);
       try {
           const data = await getBenchmarkData(filename);
+          setBenchmarkRequests(data.requests); // Set requests state
           
           // Map Python/JSON data to Frontend Types
           const mappedStaff: StaffMember[] = data.staff_data.map((s: PythonStaffData) => ({
@@ -388,6 +391,13 @@ const HeroSelect: React.FC = () => {
           </div>
         </div>
         <div className="hero-select__sidebar">
+          {selectedBenchmark && (
+            <BenchmarkAnalysis 
+              staff={allStaff} 
+              shifts={allShifts} 
+              requests={benchmarkRequests} 
+            />
+          )}
           {rosterView === 'daily' && !isGenerating && (
             <AvailableStaff
               allStaff={allStaff}

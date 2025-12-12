@@ -1,0 +1,72 @@
+.benchmark-analysis {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #333; /* Set a default dark text color */
+}
+
+.benchmark-analysis h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.analysis-card {
+  background: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+.analysis-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.25rem;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.metric.danger .value { color: #d32f2f; font-weight: bold; }
+.metric.warning .value { color: #f57c00; font-weight: bold; }
+.metric.success .value { color: #388e3c; font-weight: bold; }
+
+.role-scarcity {
+  overflow-x: auto;
+}
+
+.role-scarcity table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.role-scarcity th {
+  text-align: left;
+  padding: 0.25rem;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+}
+
+.role-scarcity td {
+  padding: 0.25rem;
+}
+
+.role-scarcity tr.danger td { background-color: #ffebee; }
+.role-scarcity tr.warning td { background-color: #fff3e0; }

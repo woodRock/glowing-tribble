@@ -20,7 +20,7 @@ export interface ContractDetails {
 export interface StaffMember {
   id: string;
   name: string;
-  roles: Role[];
+  roles: string[];
   preferences: StaffPreferences; // Added
   contractDetails?: ContractDetails[];
   avatar: string;
@@ -28,7 +28,7 @@ export interface StaffMember {
 
 export interface Shift {
   id: string;
-  role: Role;
+  role: string;
   startTime: string;
   endTime: string;
   staffMemberId?: string;
