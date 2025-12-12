@@ -1,37 +1,41 @@
 # RosterForge
 
-RosterForge is a web-based application for generating and managing staff rosters. It features an automatic roster generation system based on the stable marriage algorithm and a visual manual editor inspired by the Overwatch hero select screen.
+RosterForge is a web-based application for generating and managing staff rosters. It features an automatic roster generation system based on various evolutionary computation algorithms and a visual manual editor.
 
 ## How to Run the Application
 
-This project is a monorepo containing a `server` (backend) and a `client` (frontend). You will need to run them in two separate terminal windows.
+This project now uses a Python Flask server (for algorithmic computations and data serving) and a React frontend client. You will need to run them in two separate terminal windows.
 
-### Running the Backend Server
+### 1. Run the Python Backend Server
 
-1.  **Navigate to the server directory:**
+This server provides the evolutionary computation algorithms and serves benchmark problem data.
+
+1.  **Ensure Python dependencies are installed:**
+    Make sure you have `flask` and `flask-cors` installed. If not, run:
     ```bash
-    cd roster-forge/server
+    pip install flask flask-cors
+    ```
+    (Note: If you have multiple Python versions, use `python3 -m pip install flask flask-cors` to ensure it's installed for the correct interpreter.)
+
+2.  **Navigate to the project root directory:**
+    ```bash
+    cd /Users/woodj/Desktop/roster-forge
     ```
 
-2.  **Install dependencies:**
+3.  **Start the Python server:**
     ```bash
-    npm install
+    python3 server/universal_api.py
     ```
+    The Python server will be running on `http://localhost:5001`. Check your terminal for output confirming it has started.
 
-3.  **Start the server:**
-    ```bash
-    npm start
-    ```
-    The backend server will be running on `http://localhost:4000`.
-
-### Running the Frontend Client
+### 2. Run the Frontend Client
 
 1.  **Navigate to the client directory:**
     ```bash
-    cd roster-forge/client
+    cd client
     ```
 
-2.  **Install dependencies:**
+2.  **Install JavaScript dependencies:**
     ```bash
     npm install
     ```
@@ -40,6 +44,6 @@ This project is a monorepo containing a `server` (backend) and a `client` (front
     ```bash
     npm run dev
     ```
-    The frontend application will be running on `http://localhost:5173` (or the next available port).
-# glowing-tribble
-# glowing-tribble
+    The frontend application will typically be running on `http://localhost:5173` (or the next available port). Open this URL in your web browser.
+
+Once both are running, you can select a benchmark problem and an algorithm in the client application to generate rosters.
